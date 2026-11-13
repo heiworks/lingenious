@@ -11,7 +11,7 @@ RUN --mount=type=cache,target=/root/.npm npm ci --no-audit --no-fund
 COPY web/ui/ .
 RUN npm run build
 
-FROM python:3.12-slim
+FROM python:3.15-slim
 ARG APT_MIRROR=""
 ARG PIP_INDEX_URL=https://pypi.org/simple
 RUN if [ -n "$APT_MIRROR" ]; then \
