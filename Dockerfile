@@ -1,7 +1,7 @@
 # Needs BuildKit (default since Docker 23; otherwise DOCKER_BUILDKIT=1) for the cache mounts.
 # Targets: `runtime` (no test tooling; used by web/Dockerfile) and `dev` (adds pytest/ruff; the default).
 #   docker build --target runtime -t lingenious:runtime .
-FROM python:3.12-slim AS base
+FROM python:3.15-slim AS base
 
 # Optional mirrors for slow networks: --build-arg APT_MIRROR=<host> --build-arg PIP_INDEX_URL=<url>
 # (Makefile and scripts/run.sh pass them through from env vars of the same name).
